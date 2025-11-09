@@ -201,15 +201,11 @@ export default function Index() {
               {/* Center Phone Mockups */}
               <div className="flex justify-center items-center">
                 <div className="relative w-full max-w-xs md:max-w-sm">
-                  <picture>
-                    <source srcSet="/images/phone-mockup.png" type="image/png" />
-                    <img
-                      src="/images/phone-mockup.png"
-                      alt="Mobile App Preview"
-                      className="w-full drop-shadow-2xl"
-                      loading="lazy"
-                    />
-                  </picture>
+                  <img
+                    src="/images/phone-mockup.png"
+                    alt="Mobile App Preview"
+                    className="w-full drop-shadow-2xl"
+                  />
                 </div>
               </div>
 
