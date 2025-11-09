@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600px" height="800px" viewBox="0 0 600 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="phoneGradient">
+            <stop stop-color="#3CC27B" offset="0%"/>
+            <stop stop-color="#00602D" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="url(#phoneGradient)" x="100" y="50" width="400" height="700" rx="40"/>
+        <rect fill="#FFFFFF" opacity="0.1" x="120" y="70" width="360" height="660" rx="30"/>
+        <circle fill="#FFFFFF" opacity="0.15" cx="300" cy="760" r="20"/>
+    </g>
+</svg>

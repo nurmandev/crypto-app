@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(2, 2)" fill="none" fill-rule="evenodd">
+        <circle fill="#627EEA" cx="14" cy="14" r="14"/>
+        <path d="M14,4 L14,12.87 L20.997,15.87 L14,4 Z" fill="#FFFFFF" fill-rule="nonzero" opacity="0.602"/>
+        <path d="M14,4 L7,15.87 L14,12.87 L14,4 Z" fill="#FFFFFF" fill-rule="nonzero"/>
+        <path d="M14,20.72 L14,24.97 L21,16.37 L14,20.72 Z" fill="#FFFFFF" fill-rule="nonzero" opacity="0.602"/>
+        <path d="M14,24.97 L14,20.72 L7,16.37 L14,24.97 Z" fill="#FFFFFF" fill-rule="nonzero"/>
+        <path d="M14,19.67 L20.997,15.32 L14,12.32 L14,19.67 Z" fill="#FFFFFF" fill-rule="nonzero" opacity="0.2"/>
+        <path d="M7,15.32 L14,19.67 L14,12.32 L7,15.32 Z" fill="#FFFFFF" fill-rule="nonzero" opacity="0.602"/>
+    </g>
+</svg>
