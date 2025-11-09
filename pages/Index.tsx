@@ -189,18 +189,18 @@ export default function Index() {
               {/* Left Crypto Icons - Hidden on mobile */}
               <div className="hidden lg:flex flex-col items-end justify-center gap-8 pr-6">
                 {[
-                  { bgColor: "bg-orange-400", char: "฿", label: "BTC" },
-                  { bgColor: "bg-red-500", char: "▲", label: "TRX" },
-                  { bgColor: "bg-teal-400", char: "≡", label: "USDT" },
-                  { bgColor: "bg-yellow-500", char: "🐕", label: "DOGE" },
-                  { bgColor: "bg-purple-600", char: "◆", label: "ETH" },
+                  { icon: "images/btc.png", label: "BTC" },
+                  { icon: "images/trx.png", label: "TRX" },
+                  { icon: "images/crypto-icons/usdt.svg", label: "USDT" },
+                  { icon: "images/eth.png", label: "ETH" },
+                  { icon: "images/dog.png", label: "DOGE" },
                 ].map((crypto, idx) => (
                   <div key={idx} className="flex items-center gap-4">
-                    <div
-                      className={`${crypto.bgColor} w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0`}
-                    >
-                      {crypto.char}
-                    </div>
+                    <img
+                      src={crypto.icon}
+                      alt={crypto.label}
+                      className="w-12 h-12 rounded-full shadow-lg flex-shrink-0 object-cover"
+                    />
                     <div className="w-16 h-0.5 bg-gray-300"></div>
                   </div>
                 ))}
