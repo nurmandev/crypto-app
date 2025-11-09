@@ -181,50 +181,76 @@ export default function Index() {
               {/* Left Crypto Icons - Hidden on mobile */}
               <div className="hidden lg:flex flex-col items-end justify-center gap-8 pr-6">
                 {[
-                  { icon: "images/btc.png", label: "BTC" },
-                  { icon: "images/trx.png", label: "TRX" },
-                  { icon: "images/crypto-icons/usdt.svg", label: "USDT" },
-                  { icon: "images/eth.png", label: "ETH" },
-                  { icon: "images/dog.png", label: "DOGE" },
+                  { icon: "/images/btc.png", label: "BTC", width: "179px" },
+                  { icon: "/images/trx.png", label: "TRX", width: "115px" },
+                  { icon: "/images/crypto-icons/usdt.svg", label: "USDT", width: "219px" },
+                  { icon: "/images/sol.png", label: "SOL", width: "272px" },
+                  { icon: "/images/dog.png", label: "DOGE", width: "159px" },
                 ].map((crypto, idx) => (
                   <div key={idx} className="flex items-center gap-4">
-                    <img
-                      src={crypto.icon}
-                      alt={crypto.label}
-                      className="w-12 h-12 rounded-full shadow-lg flex-shrink-0 object-cover"
-                    />
-                    <div className="w-16 h-0.5 bg-gray-300"></div>
+                    <div className="flex items-center justify-center w-[94px] h-[94px] rounded-full bg-white shadow-[6px_-1px_34px_0_rgba(164,164,164,0.25)] p-[10px]">
+                      <img
+                        src={crypto.icon}
+                        alt={crypto.label}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                    <svg
+                      className="flex-shrink-0"
+                      style={{ width: crypto.width, height: '2px' }}
+                      viewBox={`0 0 ${parseInt(crypto.width)} 2`}
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <linearGradient id={`gradient-${idx}`} x1="0" y1="1.5" x2={parseInt(crypto.width)} y2="1.5" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#3CC27B"/>
+                          <stop offset="1" stopColor="#1C5C3A" stopOpacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d={`M0 1L${parseInt(crypto.width)} 1`}
+                        stroke={`url(#gradient-${idx})`}
+                        strokeWidth="2"
+                      />
+                    </svg>
                   </div>
                 ))}
               </div>
 
               {/* Center Phone Mockups */}
               <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-xs md:max-w-sm">
+                <div className="relative w-full max-w-[500px]">
                   <img
-                    src="/images/phone-mockup.png"
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/9dd109c9d143e344a1e0cde3ee5ac1081bb25d1c?width=2260"
                     alt="Mobile App Preview"
-                    className="w-full drop-shadow-2xl"
+                    className="w-full drop-shadow-[81px_0_44px_0_rgba(0,0,0,0.25)]"
                   />
                 </div>
               </div>
 
               {/* Right Transaction Info - Hidden on mobile */}
-              <div className="hidden lg:flex flex-col gap-6 text-sm">
+              <div className="hidden lg:flex flex-col gap-4 text-sm pl-6">
                 {[
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
                 ].map((transaction, idx) => (
-                  <div key={idx} className="text-gray-600">
-                    <span className="font-semibold">Sold 100 USDT</span> for{" "}
-                    {transaction.price}
-                    <br />
-                    <span className="text-gray-500">
-                      ₹5,200 has been received in your wallet
-                    </span>
+                  <div
+                    key={idx}
+                    className="bg-white rounded-[3px] px-[14px] py-[11px] flex flex-col gap-[-11px]"
+                  >
+                    <div className="text-[13px] leading-[33px]">
+                      <span className="font-normal text-black">Sold {transaction.amount} </span>
+                      <span className="font-bold text-black">{transaction.symbol}</span>
+                      <span className="font-normal text-black"> for </span>
+                      <span className="font-bold text-[#3CC27B]">{transaction.price}</span>
+                    </div>
+                    <div className="text-[13px] leading-[33px] text-black font-normal">
+                      {transaction.price} has been received in your wallet
+                    </div>
                   </div>
                 ))}
               </div>
