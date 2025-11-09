@@ -149,20 +149,12 @@ export default function Index() {
             {/* Social Proof */}
             <div className="flex flex-col xs:flex-row items-center justify-center gap-3 xs:gap-4 text-[11px] xs:text-xs sm:text-sm text-gray-900">
               <div className="flex items-center -space-x-1.5 xs:-space-x-2">
-                {[
-                  "https://api.builder.io/api/v1/image/assets/TEMP/avatar1.jpg",
-                  "https://api.builder.io/api/v1/image/assets/TEMP/avatar2.jpg",
-                  "https://api.builder.io/api/v1/image/assets/TEMP/avatar3.jpg",
-                  "https://api.builder.io/api/v1/image/assets/TEMP/avatar4.jpg"
-                ].map((avatar, i) => (
+                {["sarah", "john", "emma", "michael"].map((name, i) => (
                   <img
                     key={i}
-                    src={avatar}
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${name}&scale=80`}
                     alt={`User ${i + 1}`}
                     className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 rounded-full border border-white xs:border-2 ring-1 ring-gray-100 object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect fill='%23d1d5db' width='32' height='32' rx='50%25'/%3E%3C/svg%3E";
-                    }}
                   />
                 ))}
               </div>
