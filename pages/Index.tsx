@@ -149,11 +149,13 @@ export default function Index() {
             {/* Social Proof */}
             <div className="flex flex-col xs:flex-row items-center justify-center gap-3 xs:gap-4 text-[11px] xs:text-xs sm:text-sm text-gray-900">
               <div className="flex items-center -space-x-1.5 xs:-space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
+                {["sarah", "john", "emma", "michael"].map((name, i) => (
+                  <img
                     key={i}
-                    className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 rounded-full bg-gray-300 border border-white xs:border-2 ring-1 ring-gray-100"
-                  ></div>
+                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${name}&scale=80`}
+                    alt={`User ${i + 1}`}
+                    className="w-6 xs:w-7 sm:w-8 h-6 xs:h-7 sm:h-8 rounded-full border border-white xs:border-2 ring-1 ring-gray-100 object-cover"
+                  />
                 ))}
               </div>
               <span className="font-medium whitespace-nowrap text-gray-700">
@@ -179,50 +181,76 @@ export default function Index() {
               {/* Left Crypto Icons - Hidden on mobile */}
               <div className="hidden lg:flex flex-col items-end justify-center gap-8 pr-6">
                 {[
-                  { bgColor: "bg-orange-400", char: "฿", label: "BTC" },
-                  { bgColor: "bg-red-500", char: "▲", label: "TRX" },
-                  { bgColor: "bg-teal-400", char: "≡", label: "USDT" },
-                  { bgColor: "bg-yellow-500", char: "🐕", label: "DOGE" },
-                  { bgColor: "bg-purple-600", char: "◆", label: "ETH" },
+                  { icon: "/images/btc.png", label: "BTC", width: "179px" },
+                  { icon: "/images/trx.png", label: "TRX", width: "115px" },
+                  { icon: "/images/crypto-icons/usdt.svg", label: "USDT", width: "219px" },
+                  { icon: "/images/sol.png", label: "SOL", width: "272px" },
+                  { icon: "/images/dog.png", label: "DOGE", width: "159px" },
                 ].map((crypto, idx) => (
                   <div key={idx} className="flex items-center gap-4">
-                    <div
-                      className={`${crypto.bgColor} w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0`}
-                    >
-                      {crypto.char}
+                    <div className="flex items-center justify-center w-[94px] h-[94px] rounded-full bg-white shadow-[6px_-1px_34px_0_rgba(164,164,164,0.25)] p-[10px]">
+                      <img
+                        src={crypto.icon}
+                        alt={crypto.label}
+                        className="max-w-full max-h-full object-contain"
+                      />
                     </div>
-                    <div className="w-16 h-0.5 bg-gray-300"></div>
+                    <svg
+                      className="flex-shrink-0"
+                      style={{ width: crypto.width, height: '2px' }}
+                      viewBox={`0 0 ${parseInt(crypto.width)} 2`}
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <linearGradient id={`gradient-${idx}`} x1="0" y1="1.5" x2={parseInt(crypto.width)} y2="1.5" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#3CC27B"/>
+                          <stop offset="1" stopColor="#1C5C3A" stopOpacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d={`M0 1L${parseInt(crypto.width)} 1`}
+                        stroke={`url(#gradient-${idx})`}
+                        strokeWidth="2"
+                      />
+                    </svg>
                   </div>
                 ))}
               </div>
 
               {/* Center Phone Mockups */}
               <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-xs md:max-w-sm">
+                <div className="relative w-full max-w-[500px]">
                   <img
-                    src="images/phone-mockup.png"
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/9dd109c9d143e344a1e0cde3ee5ac1081bb25d1c?width=2260"
                     alt="Mobile App Preview"
-                    className="w-full drop-shadow-2xl"
+                    className="w-full drop-shadow-[81px_0_44px_0_rgba(0,0,0,0.25)]"
                   />
                 </div>
               </div>
 
               {/* Right Transaction Info - Hidden on mobile */}
-              <div className="hidden lg:flex flex-col gap-6 text-sm">
+              <div className="hidden lg:flex flex-col gap-4 text-sm pl-6">
                 {[
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
-                  { amount: "100", symbol: "USDT", price: "₹9,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
+                  { amount: "100", symbol: "USDT", price: "₹8,200" },
                 ].map((transaction, idx) => (
-                  <div key={idx} className="text-gray-600">
-                    <span className="font-semibold">Sold 100 USDT</span> for{" "}
-                    {transaction.price}
-                    <br />
-                    <span className="text-gray-500">
-                      ₹5,200 has been received in your wallet
-                    </span>
+                  <div
+                    key={idx}
+                    className="bg-white rounded-[3px] px-[14px] py-[11px] flex flex-col gap-[-11px]"
+                  >
+                    <div className="text-[13px] leading-[33px]">
+                      <span className="font-normal text-black">Sold {transaction.amount} </span>
+                      <span className="font-bold text-black">{transaction.symbol}</span>
+                      <span className="font-normal text-black"> for </span>
+                      <span className="font-bold text-[#3CC27B]">{transaction.price}</span>
+                    </div>
+                    <div className="text-[13px] leading-[33px] text-black font-normal">
+                      {transaction.price} has been received in your wallet
+                    </div>
                   </div>
                 ))}
               </div>
