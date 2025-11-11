@@ -147,6 +147,14 @@ export default function DepositWithdraw() {
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         </div>
 
+        {/* Overlay for mobile sidebar */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
+            onClick={closeSidebar}
+          />
+        )}
+
         {/* Main Content */}
         <div className="flex-1 min-w-0">
           <div className="bg-white rounded-[10px] p-6 md:p-7 lg:p-8 shadow-sm">
