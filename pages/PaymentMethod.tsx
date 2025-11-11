@@ -212,13 +212,34 @@ export default function PaymentMethod() {
         <div className="flex-1 min-w-0">
           {/* Payment Method Selection Card */}
           <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-sm">
-            <div className="mb-6 sm:mb-8">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                Choose Payment Method
-              </h1>
-              <p className="text-gray-600 text-sm sm:text-base md:text-lg">
-                Select how you'd like to pay for your crypto
-              </p>
+            <div className="flex items-start justify-between gap-4 mb-6 sm:mb-8">
+              <div className="flex-1">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                  Choose Payment Method
+                </h1>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg">
+                  Select how you'd like to pay for your crypto
+                </p>
+              </div>
+              <button
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className="lg:hidden flex-shrink-0 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Toggle sidebar"
+              >
+                <svg
+                  className="w-6 h-6 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
             </div>
 
             {/* Payment Options Grid */}
