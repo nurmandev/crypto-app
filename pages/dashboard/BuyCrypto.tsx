@@ -86,7 +86,7 @@ export default function BuyCrypto() {
                 </div>
 
                 <p className="text-[#838383] text-center text-xs md:text-sm lg:text-[17px] mb-6 md:mb-8">
-                  Exchange INR for cryptocurrency instantly
+                  {selectedTab === "buy" ? "Exchange INR for cryptocurrency instantly" : "Convert your cryptocurrency to INR instantly"}
                 </p>
 
                 <div className="mb-8">
