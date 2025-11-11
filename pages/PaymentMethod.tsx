@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function PaymentMethod() {
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -13,7 +14,7 @@ export default function PaymentMethod() {
 
       <div className="px-4 md:px-6 lg:px-12 mt-6 md:mt-8 flex flex-col lg:flex-row gap-6">
         {/* Sidebar */}
-        <div className="w-full lg:w-64 flex-shrink-0">
+        <div className={`${isSidebarOpen ? 'block' : 'hidden'} lg:block w-full lg:w-64 flex-shrink-0`}>
           <div className="bg-white rounded-xl shadow-sm overflow-hidden sticky top-24">
             <Link
               to="/dashboard"
