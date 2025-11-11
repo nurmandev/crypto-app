@@ -74,7 +74,7 @@ export default function Dashboard() {
 
               {/* Right Sidebar - Hidden on mobile, shown on xl breakpoint */}
               <div className="hidden xl:block">
-                <div className="sticky top-6 space-y-6">
+                <div className="sticky top-4 space-y-4">
                   <div className="transition-all duration-300 hover:translate-y-[-2px]">
                     <RightSidebar />
                   </div>
