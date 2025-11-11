@@ -70,7 +70,10 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               className="md:hidden flex items-center justify-center p-2 text-gray-700"
-              onClick={() => setIsOpen(true)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(true);
+              }}
             >
               <Menu size={26} />
             </button>
