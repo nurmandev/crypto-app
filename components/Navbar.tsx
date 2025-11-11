@@ -102,7 +102,10 @@ const Navbar = () => {
             alt="Logo"
             className="h-10 w-auto object-contain"
           />
-          <button onClick={() => setIsOpen(false)}>
+          <button onClick={(e) => {
+            e.stopPropagation();
+            setIsOpen(false);
+          }}>
             <X size={26} className="text-gray-700" />
           </button>
         </div>
