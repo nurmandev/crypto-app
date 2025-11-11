@@ -17,15 +17,20 @@ export default function PaymentMethod() {
       />
 
       <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
-        {/* Sidebar Navigation */}
-        <div className="flex-shrink-0">
+        {/* Sidebar Navigation - visible on desktop, hidden on mobile unless open */}
+        <div className="hidden md:block flex-shrink-0">
+          <Sidebar isOpen={true} onClose={() => setIsSidebarOpen(false)} />
+        </div>
+
+        {/* Mobile Sidebar */}
+        <div className="md:hidden">
           <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         </div>
 
         {/* Overlay for mobile sidebar */}
         {isSidebarOpen && (
           <div
-            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 md:hidden transition-opacity duration-300"
             onClick={() => setIsSidebarOpen(false)}
           />
         )}
