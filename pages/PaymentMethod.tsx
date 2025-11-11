@@ -389,18 +389,19 @@ export default function PaymentMethod() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 to="/buy-crypto"
-                className="flex items-center justify-center gap-2 px-6 py-3 text-gray-700 font-medium rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 text-gray-700 text-sm sm:text-base font-medium rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back to Order Details</span>
+                <span className="hidden xs:inline">Back to Order Details</span>
+                <span className="inline xs:hidden">Back</span>
               </Link>
 
               <button
                 disabled={!selectedMethod}
-                className={`flex-1 py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+                className={`w-full sm:flex-1 py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 ${
                   selectedMethod
                     ? "bg-green-600 text-white hover:bg-green-700 shadow-md"
                     : "bg-gray-200 text-gray-500 cursor-not-allowed"
