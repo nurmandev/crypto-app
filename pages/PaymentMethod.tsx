@@ -11,7 +11,10 @@ export default function PaymentMethod() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Top Navigation Bar */}
-      <UserNavbar />
+      <DashboardHeader
+        onMenuToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+        isMenuOpen={isSidebarOpen}
+      />
 
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
