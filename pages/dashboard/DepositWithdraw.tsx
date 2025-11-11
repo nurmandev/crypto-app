@@ -222,7 +222,7 @@ function OptionCard({
           : "bg-[#F8F8F8]"
       }`}
     >
-      <div className="flex flex-col items-start gap-3 md:gap-4 lg:gap-[18px] w-full">
+      <div className="flex flex-col items-start gap-2 md:gap-3 w-full">
         {/* Icon */}
         <div className="flex-shrink-0">{icon}</div>
 
