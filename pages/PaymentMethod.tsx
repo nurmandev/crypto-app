@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Check } from "lucide-react";
-import UserNavbar from "../components/User-Navbar";
+import { ArrowLeft, Check, Menu, X } from "lucide-react";
 import { useState } from "react";
+import DashboardHeader from "./dashboard/components/DashboardHeader";
+import Sidebar from "./dashboard/components/Sidebar";
 
 export default function PaymentMethod() {
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
