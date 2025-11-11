@@ -90,7 +90,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <Link
                 key={item.label}
                 to={item.href}
-                onClick={onClose}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
                 className={`flex items-center gap-3 px-3 py-2 rounded-md transition-all text-sm md:text-base ${
                   isActive
                     ? "bg-[#3CC27B] text-white"
