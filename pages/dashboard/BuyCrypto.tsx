@@ -38,21 +38,13 @@ export default function BuyCrypto() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="relative flex pt-6 md:pt-8">
-        <div
-          className={`
-          fixed inset-y-0 left-0 z-40 w-72 bg-white/95 backdrop-blur-sm transform transition-all duration-300 
-          shadow-xl overflow-y-auto border-r border-gray-100
-          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          lg:relative lg:translate-x-0 lg:shadow-none lg:border-r lg:w-64
-        `}
-        >
-          <Sidebar
-            isOpen={isSidebarOpen}
-            onClose={() => setIsSidebarOpen(false)}
-          />
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
+        {/* Sidebar Navigation */}
+        <div className="flex-shrink-0">
+          <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         </div>
 
+        {/* Overlay for mobile sidebar */}
         {isSidebarOpen && (
           <div
             className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
@@ -61,7 +53,7 @@ export default function BuyCrypto() {
         )}
 
         <div className="flex-1 min-w-0">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="pb-3">
             <div className="grid grid-cols-1 xl:grid-cols-[1fr,368px] gap-6">
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="mb-8">
