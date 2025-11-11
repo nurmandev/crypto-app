@@ -111,6 +111,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <div className="p-4 md:p-6 border-t border-gray-200">
           <Link
             to="/"
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-2 justify-center px-4 py-2 bg-[#EBEBEB] rounded-md text-black text-sm md:text-base hover:bg-gray-300 transition-colors"
           >
             <span>Logout</span>
