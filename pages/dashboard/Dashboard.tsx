@@ -24,7 +24,7 @@ export default function Dashboard() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="px-4 md:px-6 lg:px-12 mt-4 md:mt-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
         {/* Sidebar Navigation */}
         <div className="flex-shrink-0">
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
@@ -40,10 +40,10 @@ export default function Dashboard() {
 
         {/* Main Content Area */}
         <div className="flex-1 min-w-0">
-          <div className="pt-2 pb-6">
-            <div className="grid grid-cols-1 xl:grid-cols-[1fr,340px] gap-6">
+          <div className="pb-3">
+            <div className="grid grid-cols-1 xl:grid-cols-[1fr,340px] gap-4">
               {/* Main Content */}
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* Balance Card */}
                 <div className="transition-all duration-300 hover:translate-y-[-2px]">
                   <BalanceCard />
