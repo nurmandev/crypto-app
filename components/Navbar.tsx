@@ -111,40 +111,58 @@ const Navbar = () => {
         <nav className="flex flex-col gap-6 px-6 py-6 text-[16px]">
           <Link
             to="/"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
             className="text-[#3CC27B] font-medium hover:text-[#3CC27B]/80 transition"
           >
             Home
           </Link>
           <Link
             to="/about"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
             className="text-gray-900 hover:text-[#3CC27B] transition"
           >
             About
           </Link>
           <Link
             to="/services"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
             className="text-gray-900 hover:text-[#3CC27B] transition"
           >
             Services
           </Link>
           <Link
             to="/contact"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
             className="text-gray-900 hover:text-[#3CC27B] transition"
           >
             Contact
           </Link>
           <a
             href="#"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
             className="text-gray-900 hover:text-[#3CC27B] transition"
           >
             FAQ
           </a>
-          <Link to="/login" onClick={() => setIsOpen(false)}>
+          <Link to="/login" onClick={(e) => {
+            e.stopPropagation();
+            setIsOpen(false);
+          }}>
             <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-8 h-[40px] w-full rounded-md transition">
               Login
             </Button>
