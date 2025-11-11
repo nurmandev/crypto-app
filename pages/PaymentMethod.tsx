@@ -414,7 +414,7 @@ export default function PaymentMethod() {
         </div>
 
         {/* Right Sidebar - Recent Transactions */}
-        <div className="w-full lg:w-80 flex-shrink-0">
+        <div className="w-full lg:w-80 flex-shrink-0 hidden lg:block">
           <div className="bg-white rounded-2xl p-6 shadow-sm sticky top-24">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-bold text-gray-900">
@@ -429,26 +429,26 @@ export default function PaymentMethod() {
               {[1, 2, 3, 4].map((item) => (
                 <div
                   key={item}
-                  className="border border-gray-200 rounded-xl p-4 hover:border-green-300 hover:shadow-md transition-all duration-200"
+                  className="border border-gray-200 rounded-xl p-3 sm:p-4 hover:border-green-300 hover:shadow-md transition-all duration-200"
                 >
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-900">
+                  <div className="flex items-start justify-between gap-2 sm:gap-3 mb-3">
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-semibold text-gray-900 truncate">
                         Buy BTC
                       </h4>
                       <p className="text-xs text-gray-500 mt-1">
                         2024-12-20 14:30
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-lg whitespace-nowrap">
+                    <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-lg whitespace-nowrap flex-shrink-0">
                       Completed
                     </span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <code className="text-xs font-mono text-gray-600">
+                  <div className="flex items-center justify-between gap-2">
+                    <code className="text-xs font-mono text-gray-600 truncate">
                       0x1234...5678
                     </code>
-                    <span className="text-xs font-semibold text-gray-900">
+                    <span className="text-xs font-semibold text-gray-900 flex-shrink-0">
                       0.012 BTC
                     </span>
                   </div>
