@@ -26,8 +26,16 @@ export default function PaymentMethod() {
 
       <div className="px-4 md:px-6 lg:px-12 mt-6 md:mt-8 flex flex-col lg:flex-row gap-6">
         {/* Sidebar */}
-        <div className={`${isSidebarOpen ? 'fixed' : 'hidden'} lg:relative lg:block w-64 left-0 top-0 bottom-0 z-40 lg:z-auto lg:w-64 flex-shrink-0 lg:sticky lg:top-24 max-h-screen lg:max-h-full overflow-y-auto`}>
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden lg:sticky lg:top-24">
+        <div className="flex-shrink-0">
+          <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+        </div>
+
+        {/* Mobile Sidebar Overlay - Already handled by Sidebar component */}
+
+        {/* Main Content Wrapper */}
+        <div className="flex-1 min-w-0">
+          {/* Removed old sidebar code - now using Sidebar component */}
+          <div style={{ display: 'none' }} className="bg-white rounded-xl shadow-sm overflow-hidden lg:sticky lg:top-24">
             <Link
               to="/dashboard"
               className="block px-6 py-4 flex items-center gap-3 text-gray-900 hover:bg-gray-50 transition-colors border-b border-gray-100"
