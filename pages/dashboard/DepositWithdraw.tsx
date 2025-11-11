@@ -216,7 +216,7 @@ function OptionCard({
 }: OptionCardProps) {
   return (
     <div
-      className={`flex flex-col justify-center items-start gap-4 md:gap-6 p-5 md:p-7 lg:p-9 rounded-[10px] transition-all hover:shadow-lg ${
+      className={`flex flex-col justify-center items-start gap-3 md:gap-4 p-5 md:p-6 lg:p-7 rounded-[10px] transition-all hover:shadow-lg ${
         highlighted
           ? "border-[0.5px] border-[#3CC27B] bg-[#F8F8F8] shadow-[3px_4px_12px_0_rgba(0,0,0,0.16)]"
           : "bg-[#F8F8F8]"
