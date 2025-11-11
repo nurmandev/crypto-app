@@ -154,12 +154,12 @@ export default function DepositWithdraw() {
             <h2 className="text-lg md:text-xl lg:text-[20px] font-medium text-black mb-1 md:mb-2">
               Deposit & Withdraw
             </h2>
-            <p className="text-[#838383] text-sm md:text-base lg:text-[17px] font-normal mb-6 md:mb-8 lg:mb-12">
+            <p className="text-[#838383] text-sm md:text-base lg:text-[17px] font-normal mb-6 md:mb-8">
               Scan the QR code with any UPI app to complete payment
             </p>
 
             {/* Options Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
               {options.map((option, index) => {
                 const getLink = () => {
                   if (option.title === "Deposit Fund") return "/deposit-fund";
