@@ -5,7 +5,11 @@ import DashboardHeader from "./components/DashboardHeader";
 import Sidebar from "./components/Sidebar"; // ✅ Make sure Sidebar is correctly imported
 
 export default function PurchaseSuccess() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   const transactions = [
     {
