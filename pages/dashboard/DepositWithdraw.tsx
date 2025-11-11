@@ -141,15 +141,15 @@ export default function DepositWithdraw() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="px-4 md:px-6 lg:px-12 mt-4 md:mt-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
         {/* Sidebar Navigation */}
         <div className="flex-shrink-0">
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 max-w-[1234px]">
-          <div className="bg-white rounded-[10px] p-6 md:p-8 lg:p-10 shadow-sm">
+        <div className="flex-1 min-w-0">
+          <div className="bg-white rounded-[10px] p-6 md:p-7 lg:p-8 shadow-sm">
             {/* Header */}
             <h2 className="text-lg md:text-xl lg:text-[20px] font-medium text-black mb-1 md:mb-2">
               Deposit & Withdraw
