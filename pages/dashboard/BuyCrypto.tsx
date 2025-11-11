@@ -168,11 +168,8 @@ export default function BuyCrypto() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center gap-2 mb-8">
-                  <span className="text-sm text-gray-600">Exchange Rate:</span>
-                  <span className="text-sm font-medium text-gray-900">
-                    1 ADA = ₹28
-                  </span>
+                <div className="text-center mb-8 text-xs text-gray-600">
+                  <span>1 {selectedTab === "buy" ? "ETH" : "ADA"} = ₹{selectedTab === "buy" ? "1,85,000" : "28"}</span>
                 </div>
 
                 <Link
