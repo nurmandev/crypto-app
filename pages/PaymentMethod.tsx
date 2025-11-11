@@ -342,42 +342,42 @@ export default function PaymentMethod() {
                 <button
                   key={method.id}
                   onClick={() => setSelectedMethod(method.id)}
-                  className={`relative p-5 md:p-6 rounded-xl border-2 transition-all duration-200 text-left ${
+                  className={`relative p-4 sm:p-5 md:p-6 rounded-xl border-2 transition-all duration-200 text-left ${
                     selectedMethod === method.id
                       ? "border-green-600 bg-green-50 shadow-md"
                       : "border-gray-200 bg-white hover:border-green-300 hover:shadow-md"
                   }`}
                 >
                   {selectedMethod === method.id && (
-                    <div className="absolute top-4 right-4 bg-green-600 rounded-full p-1">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-green-600 rounded-full p-1">
+                      <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                     </div>
                   )}
 
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">{method.icon}</div>
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10">{method.icon}</div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 line-clamp-2">
                         {method.title}
                       </h3>
-                      <p className="text-sm text-gray-600 mb-4">
+                      <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-none">
                         {method.description}
                       </p>
 
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 gap-2 sm:gap-4">
                         <div>
-                          <p className="text-xs text-gray-600 font-medium uppercase tracking-wide">
+                          <p className="text-xs text-gray-600 font-medium uppercase tracking-wider line-clamp-1">
                             Processing Time
                           </p>
-                          <p className="text-sm font-semibold text-gray-900 mt-1">
+                          <p className="text-xs sm:text-sm font-semibold text-gray-900 mt-1">
                             {method.processingTime}
                           </p>
                         </div>
                         <div>
-                          <p className="text-xs text-gray-600 font-medium uppercase tracking-wide">
+                          <p className="text-xs text-gray-600 font-medium uppercase tracking-wider line-clamp-1">
                             Fees
                           </p>
-                          <p className="text-sm font-semibold text-gray-900 mt-1">
+                          <p className="text-xs sm:text-sm font-semibold text-gray-900 mt-1">
                             {method.fees}
                           </p>
                         </div>
