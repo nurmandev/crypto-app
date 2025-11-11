@@ -12,10 +12,18 @@ export default function PaymentMethod() {
       {/* Top Navigation Bar */}
       <UserNavbar />
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       <div className="px-4 md:px-6 lg:px-12 mt-6 md:mt-8 flex flex-col lg:flex-row gap-6">
         {/* Sidebar */}
-        <div className={`${isSidebarOpen ? 'block' : 'hidden'} lg:block w-full lg:w-64 flex-shrink-0`}>
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden sticky top-24">
+        <div className={`${isSidebarOpen ? 'fixed' : 'hidden'} lg:relative lg:block w-64 left-0 top-0 bottom-0 z-40 lg:z-auto lg:w-64 flex-shrink-0 lg:sticky lg:top-24 max-h-screen lg:max-h-full overflow-y-auto`}>
+          <div className="bg-white rounded-xl shadow-sm overflow-hidden lg:sticky lg:top-24">
             <Link
               to="/dashboard"
               className="block px-6 py-4 flex items-center gap-3 text-gray-900 hover:bg-gray-50 transition-colors border-b border-gray-100"
