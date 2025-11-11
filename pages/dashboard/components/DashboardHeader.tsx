@@ -11,7 +11,7 @@ export default function DashboardHeader({
   isMenuOpen,
 }: DashboardHeaderProps) {
   return (
-    <header className="bg-white rounded-lg mx-3 sm:mx-4 md:mx-6 lg:mx-12 mt-3 sm:mt-4 md:mt-6 px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 flex items-center justify-between shadow-sm sticky top-2 sm:top-4 md:top-6 z-40">
+    <header className="bg-white rounded-lg mx-3 sm:mx-4 md:mx-6 lg:mx-12 mt-3 sm:mt-4 md:mt-6 px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 flex items-center justify-between shadow-sm z-40">
       {/* Logo */}
       <Link to="/" className="flex items-center gap-2 flex-shrink-0">
         <img
