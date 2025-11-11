@@ -272,7 +272,10 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
 
           {/* Close Button - Mobile Only */}
           <button
-            onClick={onClose}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose?.();
+            }}
             className="lg:hidden flex items-center justify-center w-8 h-8 rounded hover:bg-white/20 transition-colors"
             aria-label="Close sidebar"
           >
