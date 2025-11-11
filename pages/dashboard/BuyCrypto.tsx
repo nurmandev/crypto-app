@@ -128,50 +128,40 @@ export default function BuyCrypto() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                  <div className="space-y-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8 bg-gray-50 rounded-lg p-6">
+                  <div className="space-y-3">
                     <label className="block text-sm font-medium text-gray-900">
-                      {selectedTab === "buy" ? "You Pay" : "You Receive"}
+                      {selectedTab === "buy" ? "Amount To Sell" : "Amount To Sell"}
                     </label>
-                    <div className="relative">
+                    <div className="flex items-center gap-3">
                       <input
                         type="text"
                         value={youPayAmount}
                         onChange={(e) => setYouPayAmount(e.target.value)}
-                        className="w-full h-[51px] bg-gray-50 border border-gray-200 rounded-lg px-4 text-base font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="flex-1 h-[40px] bg-white border border-gray-300 rounded-lg px-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20"
                       />
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 rounded-md px-2 py-1">
-                        <span className="text-sm font-medium text-gray-900">
-                          {selectedTab === "buy" ? "INR" : "ADA"}
+                      <div className="bg-green-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-semibold text-green-900">
+                          {selectedTab === "buy" ? "ETH" : "INR"}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 lg:-translate-y-4 z-10 hidden lg:block">
-                    <button
-                      onClick={handleSwap}
-                      className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-all duration-200 shadow-lg active:scale-95 border border-gray-200"
-                      title="Swap amounts"
-                    >
-                      <ArrowUpDown className="w-5 h-5 text-gray-600" />
-                    </button>
-                  </div>
-
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <label className="block text-sm font-medium text-gray-900">
-                      {selectedTab === "buy" ? "You Receive" : "You Pay"}
+                      {selectedTab === "buy" ? "You will Receive" : "You will Receive"}
                     </label>
-                    <div className="relative">
+                    <div className="flex items-center gap-3">
                       <input
                         type="text"
                         value={youReceiveAmount}
                         onChange={(e) => setYouReceiveAmount(e.target.value)}
-                        className="w-full h-[51px] bg-gray-50 border border-gray-200 rounded-lg px-4 text-base font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="flex-1 h-[40px] bg-white border border-gray-300 rounded-lg px-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20"
                       />
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 rounded-md px-2 py-1">
-                        <span className="text-sm font-medium text-gray-900">
-                          {selectedTab === "buy" ? "ADA" : "INR"}
+                      <div className="bg-green-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-semibold text-green-900">
+                          {selectedTab === "buy" ? "INR" : "ADA"}
                         </span>
                       </div>
                     </div>
