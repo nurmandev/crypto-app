@@ -128,7 +128,7 @@ export default function BuyCrypto() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8 bg-gray-50 rounded-lg p-6 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8 bg-gray-50 rounded-lg p-6">
                   <div className="space-y-3">
                     <label className="block text-sm font-medium text-gray-900">
                       {selectedTab === "buy" ? "Amount To Sell" : "Amount To Sell"}
@@ -140,22 +140,14 @@ export default function BuyCrypto() {
                         onChange={(e) => setYouPayAmount(e.target.value)}
                         className="flex-1 h-[40px] bg-white border border-gray-300 rounded-lg px-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20"
                       />
-                      <div className="bg-green-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs font-semibold text-green-900">
-                          {selectedTab === "buy" ? "ETH" : "INR"}
-                        </span>
-                      </div>
+                      <button
+                        onClick={handleSwap}
+                        className="w-10 h-10 rounded-full bg-teal-500 hover:bg-teal-600 flex items-center justify-center hover:scale-105 transition-all duration-200 shadow-lg active:scale-95 flex-shrink-0"
+                        title="Swap amounts"
+                      >
+                        <ArrowUpDown className="w-5 h-5 text-white" />
+                      </button>
                     </div>
-                  </div>
-
-                  <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <button
-                      onClick={handleSwap}
-                      className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center hover:scale-105 transition-all duration-200 shadow-lg active:scale-95 border border-green-200"
-                      title="Swap amounts"
-                    >
-                      <ArrowUpDown className="w-4 h-4 text-green-900" />
-                    </button>
                   </div>
 
                   <div className="space-y-3">
