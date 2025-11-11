@@ -203,12 +203,12 @@ export default function PaymentMethod() {
         {/* Main Content */}
         <div className="flex-1 min-w-0">
           {/* Payment Method Selection Card */}
-          <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm">
-            <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-sm">
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                 Choose Payment Method
               </h1>
-              <p className="text-gray-600 text-base md:text-lg">
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg">
                 Select how you'd like to pay for your crypto
               </p>
             </div>
