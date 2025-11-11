@@ -131,7 +131,7 @@ export default function BuyCrypto() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-900">
-                      You Pay
+                      {selectedTab === "buy" ? "You Pay" : "You Receive"}
                     </label>
                     <div className="relative">
                       <input
@@ -142,7 +142,7 @@ export default function BuyCrypto() {
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 rounded-md px-2 py-1">
                         <span className="text-sm font-medium text-gray-900">
-                          INR
+                          {selectedTab === "buy" ? "INR" : "ADA"}
                         </span>
                       </div>
                     </div>
@@ -160,7 +160,7 @@ export default function BuyCrypto() {
 
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-900">
-                      You Receive
+                      {selectedTab === "buy" ? "You Receive" : "You Pay"}
                     </label>
                     <div className="relative">
                       <input
@@ -171,7 +171,7 @@ export default function BuyCrypto() {
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 rounded-md px-2 py-1">
                         <span className="text-sm font-medium text-gray-900">
-                          ADA
+                          {selectedTab === "buy" ? "ADA" : "INR"}
                         </span>
                       </div>
                     </div>
