@@ -54,11 +54,11 @@ export default function BuyCrypto() {
 
         <div className="flex-1 min-w-0">
           <div className="pb-3">
-            <div className="grid grid-cols-1 xl:grid-cols-[1fr,368px] gap-6">
+            <div className="grid grid-cols-1 xl:grid-cols-[1fr,368px] gap-4">
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="mb-8">
                   <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
-                    Buy Cryptocurrency
+                    {selectedTab === "buy" ? "Buy" : "Sell"} Cryptocurrency
                   </h1>
                   <p className="text-gray-600">
                     Exchange INR for cryptocurrency instantly with best market
@@ -68,17 +68,20 @@ export default function BuyCrypto() {
 
                 <div className="relative mb-8">
                   <div className="w-full h-[51px] bg-gray-50 rounded-lg"></div>
-                  <div className="absolute top-1 left-1 w-[calc(50%-4px)] h-[43px] bg-white rounded-md shadow-sm"></div>
+                  <div className={`absolute top-1 ${selectedTab === "buy" ? "left-1" : "right-1"} w-[calc(50%-4px)] h-[43px] bg-white rounded-md shadow-sm transition-all duration-300`}></div>
                   <div className="absolute inset-0 flex">
-                    <button className="flex-1 text-base font-medium text-gray-900">
+                    <button
+                      onClick={() => setSelectedTab("buy")}
+                      className="flex-1 text-base font-medium text-gray-900"
+                    >
                       Buy Crypto
                     </button>
-                    <Link
-                      to="/sell-crypto"
+                    <button
+                      onClick={() => setSelectedTab("sell")}
                       className="flex-1 flex items-center justify-center text-base font-medium text-gray-500 hover:text-gray-900 transition-colors"
                     >
                       Sell Crypto
-                    </Link>
+                    </button>
                   </div>
                 </div>
 
