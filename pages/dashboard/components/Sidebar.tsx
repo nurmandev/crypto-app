@@ -57,15 +57,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile Overlay - Only on mobile when open */}
-      {isOpen && !isDesktop && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30"
-          onClick={onClose}
-          style={{ pointerEvents: "auto", overscrollBehavior: "contain" }}
-        />
-      )}
-
       {/* Sidebar */}
       <aside
         className={`fixed md:static top-0 left-0 h-screen md:h-auto w-72 sm:w-80 md:w-64 bg-white rounded-r-lg md:rounded-lg shadow-lg md:shadow-none overflow-y-auto z-40 transform transition-transform duration-300 ease-in-out
@@ -99,7 +90,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <Link
                 key={item.label}
                 to={item.href}
-                onClick={onClose}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
                 className={`flex items-center gap-3 px-3 py-2 rounded-md transition-all text-sm md:text-base ${
                   isActive
                     ? "bg-[#3CC27B] text-white"
@@ -117,6 +111,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <div className="p-4 md:p-6 border-t border-gray-200">
           <Link
             to="/"
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-2 justify-center px-4 py-2 bg-[#EBEBEB] rounded-md text-black text-sm md:text-base hover:bg-gray-300 transition-colors"
           >
             <span>Logout</span>

@@ -5,6 +5,7 @@ import DashboardHeader from "./components/DashboardHeader";
 import Sidebar from "./components/Sidebar";
 
 export default function BuyCrypto() {
+  const [selectedTab, setSelectedTab] = useState("buy");
   const [selectedCrypto, setSelectedCrypto] = useState("Cardano (ADA)");
   const [youPayAmount, setYouPayAmount] = useState("300.00");
   const [youReceiveAmount, setYouReceiveAmount] = useState("10.71428571");
@@ -37,21 +38,13 @@ export default function BuyCrypto() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="relative flex pt-6 md:pt-8">
-        <div
-          className={`
-          fixed inset-y-0 left-0 z-40 w-72 bg-white/95 backdrop-blur-sm transform transition-all duration-300 
-          shadow-xl overflow-y-auto border-r border-gray-100
-          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          lg:relative lg:translate-x-0 lg:shadow-none lg:border-r lg:w-64
-        `}
-        >
-          <Sidebar
-            isOpen={isSidebarOpen}
-            onClose={() => setIsSidebarOpen(false)}
-          />
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
+        {/* Sidebar Navigation */}
+        <div className="flex-shrink-0">
+          <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
         </div>
 
+        {/* Overlay for mobile sidebar */}
         {isSidebarOpen && (
           <div
             className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
@@ -60,12 +53,12 @@ export default function BuyCrypto() {
         )}
 
         <div className="flex-1 min-w-0">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="grid grid-cols-1 xl:grid-cols-[1fr,368px] gap-6">
+          <div className="pb-3">
+            <div className="grid grid-cols-1 xl:grid-cols-[1fr,368px] gap-4">
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="mb-8">
                   <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
-                    Buy Cryptocurrency
+                    {selectedTab === "buy" ? "Buy" : "Sell"} Cryptocurrency
                   </h1>
                   <p className="text-gray-600">
                     Exchange INR for cryptocurrency instantly with best market
@@ -75,22 +68,25 @@ export default function BuyCrypto() {
 
                 <div className="relative mb-8">
                   <div className="w-full h-[51px] bg-gray-50 rounded-lg"></div>
-                  <div className="absolute top-1 left-1 w-[calc(50%-4px)] h-[43px] bg-white rounded-md shadow-sm"></div>
+                  <div className={`absolute top-1 ${selectedTab === "buy" ? "left-1" : "right-1"} w-[calc(50%-4px)] h-[43px] bg-white rounded-md shadow-sm transition-all duration-300`}></div>
                   <div className="absolute inset-0 flex">
-                    <button className="flex-1 text-base font-medium text-gray-900">
+                    <button
+                      onClick={() => setSelectedTab("buy")}
+                      className="flex-1 text-base font-medium text-gray-900"
+                    >
                       Buy Crypto
                     </button>
-                    <Link
-                      to="/sell-crypto"
+                    <button
+                      onClick={() => setSelectedTab("sell")}
                       className="flex-1 flex items-center justify-center text-base font-medium text-gray-500 hover:text-gray-900 transition-colors"
                     >
                       Sell Crypto
-                    </Link>
+                    </button>
                   </div>
                 </div>
 
                 <p className="text-[#838383] text-center text-xs md:text-sm lg:text-[17px] mb-6 md:mb-8">
-                  Exchange INR for cryptocurrency instantly
+                  {selectedTab === "buy" ? "Exchange INR for cryptocurrency instantly" : "Convert your cryptocurrency to INR instantly"}
                 </p>
 
                 <div className="mb-8">
@@ -135,7 +131,7 @@ export default function BuyCrypto() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-900">
-                      You Pay
+                      {selectedTab === "buy" ? "You Pay" : "You Receive"}
                     </label>
                     <div className="relative">
                       <input
@@ -146,7 +142,7 @@ export default function BuyCrypto() {
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 rounded-md px-2 py-1">
                         <span className="text-sm font-medium text-gray-900">
-                          INR
+                          {selectedTab === "buy" ? "INR" : "ADA"}
                         </span>
                       </div>
                     </div>
@@ -164,7 +160,7 @@ export default function BuyCrypto() {
 
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-900">
-                      You Receive
+                      {selectedTab === "buy" ? "You Receive" : "You Pay"}
                     </label>
                     <div className="relative">
                       <input
@@ -175,7 +171,7 @@ export default function BuyCrypto() {
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-100 rounded-md px-2 py-1">
                         <span className="text-sm font-medium text-gray-900">
-                          ADA
+                          {selectedTab === "buy" ? "ADA" : "INR"}
                         </span>
                       </div>
                     </div>

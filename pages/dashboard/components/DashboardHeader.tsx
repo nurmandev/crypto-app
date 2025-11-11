@@ -11,7 +11,7 @@ export default function DashboardHeader({
   isMenuOpen,
 }: DashboardHeaderProps) {
   return (
-    <header className="bg-white rounded-lg mx-3 sm:mx-4 md:mx-6 lg:mx-12 mt-3 sm:mt-4 md:mt-6 px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 flex items-center justify-between shadow-sm sticky top-2 sm:top-4 md:top-6 z-40">
+    <header className="bg-white rounded-lg mx-3 sm:mx-4 md:mx-6 lg:mx-12 mt-3 sm:mt-4 md:mt-6 px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 flex items-center justify-between shadow-sm z-40">
       {/* Logo */}
       <Link to="/" className="flex items-center gap-2 flex-shrink-0">
         <img
@@ -31,6 +31,7 @@ export default function DashboardHeader({
         {/* Go to Home */}
         <Link
           to="/"
+          onClick={(e) => e.stopPropagation()}
           className="hidden xs:inline-block sm:inline-block px-2.5 sm:px-3 md:px-5 lg:px-7 py-1 sm:py-1.5 md:py-2 bg-[#161616] text-white text-[10px] sm:text-xs md:text-sm lg:text-[15px] font-medium rounded-md hover:bg-black/80 transition-colors whitespace-nowrap"
         >
           Go to Home
@@ -39,6 +40,7 @@ export default function DashboardHeader({
         {/* User Icon - Links to Profile */}
         <Link
           to="/profile"
+          onClick={(e) => e.stopPropagation()}
           className="w-7 sm:w-8 md:w-10 h-7 sm:h-8 md:h-10 rounded-full bg-[#D9D9D9] hover:bg-gray-400 transition-colors flex items-center justify-center hover:scale-105"
           title="Go to Profile"
         >
@@ -48,6 +50,7 @@ export default function DashboardHeader({
         {/* Notification Bell - Links to notifications area (could be dashboard) */}
         <Link
           to="/dashboard"
+          onClick={(e) => e.stopPropagation()}
           className="relative hover:opacity-80 transition-opacity hover:scale-110 inline-block"
           title="View Notifications"
         >
@@ -57,7 +60,10 @@ export default function DashboardHeader({
 
         {/* Mobile Menu Toggle */}
         <button
-          onClick={onMenuToggle}
+          onClick={(e) => {
+            e.stopPropagation();
+            onMenuToggle();
+          }}
           className="md:hidden hover:opacity-80 transition-opacity"
         >
           {isMenuOpen ? (

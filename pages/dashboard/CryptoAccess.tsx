@@ -76,11 +76,19 @@ export default function CryptoAccess() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="px-4 md:px-6 lg:px-12 mt-4 md:mt-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
         {/* Sidebar Navigation */}
         <div className="flex-shrink-0">
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         </div>
+
+        {/* Overlay for mobile sidebar */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
+            onClick={closeSidebar}
+          />
+        )}
 
         {/* Main Content */}
         <div className="flex-1">

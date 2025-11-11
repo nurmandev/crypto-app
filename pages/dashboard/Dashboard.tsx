@@ -24,16 +24,9 @@ export default function Dashboard() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="relative flex pt-6 md:pt-8">
-        {/* Sidebar Navigation - Hidden by default on mobile */}
-        <div
-          className={`
-          fixed inset-y-0 left-0 z-40 w-72 bg-white/95 backdrop-blur-sm transform transition-all duration-300 
-          shadow-xl overflow-y-auto border-r border-gray-100
-          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          lg:relative lg:translate-x-0 lg:shadow-none lg:border-r lg:w-64
-        `}
-        >
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
+        {/* Sidebar Navigation */}
+        <div className="flex-shrink-0">
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         </div>
 
@@ -47,10 +40,10 @@ export default function Dashboard() {
 
         {/* Main Content Area */}
         <div className="flex-1 min-w-0">
-          <div className="container mx-auto px-3 sm:px-6 lg:px-8 pt-2 pb-6">
-            <div className="grid grid-cols-1 xl:grid-cols-[1fr,340px] gap-6">
+          <div className="pb-3">
+            <div className="grid grid-cols-1 xl:grid-cols-[1fr,340px] gap-4">
               {/* Main Content */}
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* Balance Card */}
                 <div className="transition-all duration-300 hover:translate-y-[-2px]">
                   <BalanceCard />
@@ -81,7 +74,7 @@ export default function Dashboard() {
 
               {/* Right Sidebar - Hidden on mobile, shown on xl breakpoint */}
               <div className="hidden xl:block">
-                <div className="sticky top-6 space-y-6">
+                <div className="sticky top-4 space-y-4">
                   <div className="transition-all duration-300 hover:translate-y-[-2px]">
                     <RightSidebar />
                   </div>

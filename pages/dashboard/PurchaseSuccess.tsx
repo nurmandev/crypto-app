@@ -5,7 +5,11 @@ import DashboardHeader from "./components/DashboardHeader";
 import Sidebar from "./components/Sidebar"; // ✅ Make sure Sidebar is correctly imported
 
 export default function PurchaseSuccess() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   const transactions = [
     {
@@ -50,18 +54,23 @@ export default function PurchaseSuccess() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="flex flex-1 relative">
-        {/* Sidebar */}
-        <div className="md:flex-shrink-0">
-          <Sidebar
-            isOpen={isSidebarOpen}
-            onClose={() => setIsSidebarOpen(false)}
-          />
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
+        {/* Sidebar Navigation */}
+        <div className="flex-shrink-0">
+          <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         </div>
 
+        {/* Overlay for mobile sidebar */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
+            onClick={closeSidebar}
+          />
+        )}
+
         {/* Main Content */}
-        <div className="flex-1 p-4 md:p-6 lg:p-10 space-y-6">
-          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-6">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col lg:flex-row gap-4">
             {/* Purchase Success Section */}
             <div className="flex-1 space-y-6">
               <div className="bg-white rounded-[10px] p-6 md:p-8 shadow-sm">

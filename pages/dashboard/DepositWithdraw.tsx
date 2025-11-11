@@ -141,25 +141,33 @@ export default function DepositWithdraw() {
         isMenuOpen={isSidebarOpen}
       />
 
-      <div className="px-4 md:px-6 lg:px-12 mt-4 md:mt-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+      <div className="px-4 md:px-6 lg:px-12 mt-2 md:mt-3 flex flex-col lg:flex-row gap-3 md:gap-4">
         {/* Sidebar Navigation */}
         <div className="flex-shrink-0">
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         </div>
 
+        {/* Overlay for mobile sidebar */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-30 lg:hidden transition-opacity duration-300"
+            onClick={closeSidebar}
+          />
+        )}
+
         {/* Main Content */}
-        <div className="flex-1 max-w-[1234px]">
-          <div className="bg-white rounded-[10px] p-6 md:p-8 lg:p-10 shadow-sm">
+        <div className="flex-1 min-w-0">
+          <div className="bg-white rounded-[10px] p-6 md:p-7 lg:p-8 shadow-sm">
             {/* Header */}
             <h2 className="text-lg md:text-xl lg:text-[20px] font-medium text-black mb-1 md:mb-2">
               Deposit & Withdraw
             </h2>
-            <p className="text-[#838383] text-sm md:text-base lg:text-[17px] font-normal mb-6 md:mb-8 lg:mb-12">
+            <p className="text-[#838383] text-sm md:text-base lg:text-[17px] font-normal mb-6 md:mb-8">
               Scan the QR code with any UPI app to complete payment
             </p>
 
             {/* Options Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
               {options.map((option, index) => {
                 const getLink = () => {
                   if (option.title === "Deposit Fund") return "/deposit-fund";
@@ -208,13 +216,13 @@ function OptionCard({
 }: OptionCardProps) {
   return (
     <div
-      className={`flex flex-col justify-center items-start gap-4 md:gap-6 p-5 md:p-7 lg:p-9 rounded-[10px] transition-all hover:shadow-lg ${
+      className={`flex flex-col justify-center items-start gap-3 md:gap-4 p-5 md:p-6 lg:p-7 rounded-[10px] transition-all hover:shadow-lg ${
         highlighted
           ? "border-[0.5px] border-[#3CC27B] bg-[#F8F8F8] shadow-[3px_4px_12px_0_rgba(0,0,0,0.16)]"
           : "bg-[#F8F8F8]"
       }`}
     >
-      <div className="flex flex-col items-start gap-3 md:gap-4 lg:gap-[18px] w-full">
+      <div className="flex flex-col items-start gap-2 md:gap-3 w-full">
         {/* Icon */}
         <div className="flex-shrink-0">{icon}</div>
 
