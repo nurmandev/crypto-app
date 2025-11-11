@@ -6,9 +6,9 @@ import Sidebar from "./components/Sidebar";
 
 export default function BuyCrypto() {
   const [selectedTab, setSelectedTab] = useState("buy");
-  const [selectedCrypto, setSelectedCrypto] = useState("Cardano (ADA)");
-  const [youPayAmount, setYouPayAmount] = useState("300.00");
-  const [youReceiveAmount, setYouReceiveAmount] = useState("10.71428571");
+  const [selectedCrypto, setSelectedCrypto] = useState("Ethereum (ETH)");
+  const [youPayAmount, setYouPayAmount] = useState("0.02");
+  const [youReceiveAmount, setYouReceiveAmount] = useState("3681.50");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [showCryptoDropdown, setShowCryptoDropdown] = useState(false);
 
