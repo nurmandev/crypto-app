@@ -302,7 +302,8 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
               <Link
                 key={item.path}
                 to={item.path}
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   // Close sidebar on mobile when clicking a link
                   if (window.innerWidth < 1024 && onClose) {
                     onClose();
