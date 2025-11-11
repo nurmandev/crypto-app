@@ -5,6 +5,7 @@ import DashboardHeader from "./components/DashboardHeader";
 import Sidebar from "./components/Sidebar";
 
 export default function BuyCrypto() {
+  const [selectedTab, setSelectedTab] = useState("buy");
   const [selectedCrypto, setSelectedCrypto] = useState("Cardano (ADA)");
   const [youPayAmount, setYouPayAmount] = useState("300.00");
   const [youReceiveAmount, setYouReceiveAmount] = useState("10.71428571");
