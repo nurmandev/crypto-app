@@ -57,15 +57,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile Overlay - Only on mobile when open */}
-      {isOpen && !isDesktop && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30"
-          onClick={onClose}
-          style={{ pointerEvents: "auto", overscrollBehavior: "contain" }}
-        />
-      )}
-
       {/* Sidebar */}
       <aside
         className={`fixed md:static top-0 left-0 h-screen md:h-auto w-72 sm:w-80 md:w-64 bg-white rounded-r-lg md:rounded-lg shadow-lg md:shadow-none overflow-y-auto z-40 transform transition-transform duration-300 ease-in-out
