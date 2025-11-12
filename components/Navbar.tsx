@@ -90,34 +90,37 @@ const Navbar = () => {
 
       {/* Sidebar (mobile only) */}
       <div
-        className={`fixed top-0 left-0 z-50 h-full w-1/2 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 z-50 h-full w-64 xs:w-72 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
           <img
             src="/logo.png"
             alt="Logo"
-            className="h-10 w-auto object-contain"
+            className="h-9 w-auto object-contain"
           />
-          <button onClick={(e) => {
-            e.stopPropagation();
-            setIsOpen(false);
-          }}>
-            <X size={26} className="text-gray-700" />
+          <button
+            className="p-2 hover:bg-gray-100 rounded-lg transition"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
+          >
+            <X size={24} className="text-gray-700" />
           </button>
         </div>
 
         {/* Sidebar Links */}
-        <nav className="flex flex-col gap-6 px-6 py-6 text-[16px]">
+        <nav className="flex flex-col gap-0 px-3 py-4 text-sm">
           <Link
             to="/"
             onClick={(e) => {
               e.stopPropagation();
               setIsOpen(false);
             }}
-            className="text-[#3CC27B] font-medium hover:text-[#3CC27B]/80 transition"
+            className="px-3 py-3 text-[#3CC27B] font-medium hover:bg-[#3CC27B]/5 rounded-lg transition"
           >
             Home
           </Link>
@@ -127,7 +130,7 @@ const Navbar = () => {
               e.stopPropagation();
               setIsOpen(false);
             }}
-            className="text-gray-900 hover:text-[#3CC27B] transition"
+            className="px-3 py-3 text-gray-700 hover:text-[#3CC27B] hover:bg-gray-50 rounded-lg transition"
           >
             About
           </Link>
@@ -137,7 +140,7 @@ const Navbar = () => {
               e.stopPropagation();
               setIsOpen(false);
             }}
-            className="text-gray-900 hover:text-[#3CC27B] transition"
+            className="px-3 py-3 text-gray-700 hover:text-[#3CC27B] hover:bg-gray-50 rounded-lg transition"
           >
             Services
           </Link>
@@ -147,7 +150,7 @@ const Navbar = () => {
               e.stopPropagation();
               setIsOpen(false);
             }}
-            className="text-gray-900 hover:text-[#3CC27B] transition"
+            className="px-3 py-3 text-gray-700 hover:text-[#3CC27B] hover:bg-gray-50 rounded-lg transition"
           >
             Contact
           </Link>
@@ -157,18 +160,22 @@ const Navbar = () => {
               e.stopPropagation();
               setIsOpen(false);
             }}
-            className="text-gray-900 hover:text-[#3CC27B] transition"
+            className="px-3 py-3 text-gray-700 hover:text-[#3CC27B] hover:bg-gray-50 rounded-lg transition"
           >
             FAQ
           </a>
-          <Link to="/login" onClick={(e) => {
-            e.stopPropagation();
-            setIsOpen(false);
-          }}>
-            <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-8 h-[40px] w-full rounded-md transition">
-              Login
-            </Button>
-          </Link>
+
+          {/* Mobile Login Button */}
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <Link to="/login" onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }} className="block">
+              <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-6 py-2.5 w-full rounded-md transition text-sm font-medium">
+                Login
+              </Button>
+            </Link>
+          </div>
         </nav>
       </div>
 
