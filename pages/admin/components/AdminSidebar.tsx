@@ -90,24 +90,7 @@ const menuItems = [
       </svg>
     ),
   },
-  {
-    label: "Platform",
-    path: "/admin/platform",
-    icon: (
-      <svg
-        width="15"
-        height="17"
-        viewBox="0 0 15 17"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M7.5 0L15 4.2378V12.7622L7.5 17L0 12.7622V4.2378L7.5 0ZM1.5 6.13245V11.8645L6.75 14.8315V8.95917L1.5 6.13245ZM8.25 14.8308L13.5 11.8645V6.13321L8.25 8.95993V14.8308ZM7.5 7.63658L12.84 4.76256L7.5 1.74515L2.16 4.7618L7.5 7.63658Z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
-  },
+
   {
     label: "Cryptocurrency",
     path: "/admin/cryptocurrency",
