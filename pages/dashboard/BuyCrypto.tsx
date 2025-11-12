@@ -140,13 +140,13 @@ export default function BuyCrypto() {
                         onChange={(e) => setYouPayAmount(e.target.value)}
                         className="flex-1 h-[40px] bg-white border border-gray-300 rounded-lg px-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/20"
                       />
-                      <button
+                      {/* <button
                         onClick={handleSwap}
                         className="w-10 h-10 rounded-full bg-teal-500 hover:bg-teal-600 flex items-center justify-center hover:scale-105 transition-all duration-200 shadow-lg active:scale-95 flex-shrink-0"
                         title="Swap amounts"
                       >
                         <ArrowUpDown className="w-5 h-5 text-white" />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
 
