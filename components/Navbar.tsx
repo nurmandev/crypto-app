@@ -12,72 +12,71 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    // make the header a layout wrapper and render the visible navbar
-    // as a centered floating card so it doesn't take up normal page flow
-    <header className="relative z-50">
-      <div className="absolute left-1/2 top-6 -translate-x-1/2 w-full px-4 pointer-events-none">
-        <div className="mx-auto w-full max-w-5xl pointer-events-auto bg-white rounded-lg shadow-lg">
-          <div className="flex items-center justify-between px-6 py-3">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img
-                src="/logo.png"
-                alt="Logo"
-                className="h-10 w-auto object-contain"
-              />
-            </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+      <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-9 sm:h-11 w-auto object-contain"
+            />
+          </Link>
 
-            {/* Desktop Menu */}
-            <nav className="hidden md:flex items-center gap-8 text-[15px]">
-              <Link
-                to="/"
-                className="text-[#3CC27B] font-medium hover:text-[#3CC27B]/80 transition"
-              >
-                Home
-              </Link>
-              <Link
-                to="/about"
-                className="text-gray-900 hover:text-[#3CC27B] transition"
-              >
-                About
-              </Link>
-              <Link
-                to="/services"
-                className="text-gray-900 hover:text-[#3CC27B] transition"
-              >
-                Services
-              </Link>
-              <Link
-                to="/contact"
-                className="text-gray-900 hover:text-[#3CC27B] transition"
-              >
-                Contact
-              </Link>
-              <a
-                href="#"
-                className="text-gray-900 hover:text-[#3CC27B] transition"
-              >
-                FAQ
-              </a>
-
-              <Link to="/login">
-                <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-8 h-[37px] rounded-md transition">
-                  Login
-                </Button>
-              </Link>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden flex items-center justify-center p-2 text-gray-700"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsOpen(true);
-              }}
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+            <Link
+              to="/"
+              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[#3CC27B] hover:text-[#3CC27B]/80 transition"
             >
-              <Menu size={26} />
-            </button>
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+            >
+              About
+            </Link>
+            <Link
+              to="/services"
+              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+            >
+              Services
+            </Link>
+            <Link
+              to="/contact"
+              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+            >
+              Contact
+            </Link>
+            <a
+              href="#"
+              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+            >
+              FAQ
+            </a>
+          </nav>
+
+          {/* Desktop Login Button */}
+          <div className="hidden md:flex items-center gap-3 ml-2 lg:ml-4 flex-shrink-0">
+            <Link to="/login">
+              <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-6 lg:px-8 h-[36px] sm:h-[40px] text-sm rounded-md transition">
+                Login
+              </Button>
+            </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden flex items-center justify-center p-2 text-gray-700 hover:text-[#3CC27B] transition"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(true);
+            }}
+          >
+            <Menu size={24} />
+          </button>
         </div>
       </div>
 
