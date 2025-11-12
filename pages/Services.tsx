@@ -20,7 +20,7 @@ import Footer from "../components/Footer";
 
 export default function Services() {
   return (
-    <div className="min-h-screen bg-[#F8F8F8] pt-16 sm:pt-20">
+    <div className="min-h-screen bg-[#F8F8F8]">
       {/* Header */}
       <Navbar />
 
