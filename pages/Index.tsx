@@ -95,7 +95,7 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] pb-[60px] sm:pb-0">
+    <div className="min-h-screen bg-[#F8F8F8] pb-[60px] sm:pb-0 pt-16 sm:pt-20">
       {/* Header */}
       <Navbar />
       {/* Hero Section */}
