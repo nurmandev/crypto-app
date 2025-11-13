@@ -24,43 +24,43 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
-            <Link
-              to="/"
-              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[#3CC27B] hover:text-[#3CC27B]/80 transition"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
-            >
-              About
-            </Link>
-            <Link
-              to="/services"
-              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
-            >
-              Services
-            </Link>
-            <Link
-              to="/contact"
-              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
-            >
-              Contact
-            </Link>
-            <a
-              href="#"
-              className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
-            >
-              FAQ
-            </a>
-          </nav>
+          {/* Desktop Menu and Login (Right Side) */}
+          <div className="hidden md:flex items-center gap-1 lg:gap-2">
+            <nav className="flex items-center gap-1 lg:gap-2">
+              <Link
+                to="/"
+                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[#3CC27B] hover:text-[#3CC27B]/80 transition"
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+              >
+                About
+              </Link>
+              <Link
+                to="/services"
+                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+              >
+                Services
+              </Link>
+              <Link
+                to="/contact"
+                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+              >
+                Contact
+              </Link>
+              <a
+                href="#"
+                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+              >
+                FAQ
+              </a>
+            </nav>
 
-          {/* Desktop Login Button */}
-          <div className="hidden md:flex items-center gap-3 ml-2 lg:ml-4 flex-shrink-0">
-            <Link to="/login">
+            {/* Login Button */}
+            <Link to="/login" className="ml-2 lg:ml-4">
               <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-6 lg:px-8 h-[36px] sm:h-[40px] text-sm rounded-md transition">
                 Login
               </Button>
