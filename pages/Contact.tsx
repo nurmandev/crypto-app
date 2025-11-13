@@ -19,12 +19,12 @@ import Footer from "../components/Footer";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-[#F8F8F8]">
+    <div className="min-h-screen bg-[#F8F8F8] pb-[60px] sm:pb-0">
       {/* Header */}
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-white">
+      <section className="pt-16 sm:pt-20 pb-16 md:pt-20 md:pb-20 bg-[#F8F8F8]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <div className="text-[15px] text-gray-900 mb-4">

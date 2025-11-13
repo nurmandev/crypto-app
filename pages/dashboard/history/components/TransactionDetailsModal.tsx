@@ -68,11 +68,11 @@ export default function TransactionDetailsModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/26 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md bg-white rounded-[13px] p-5 flex flex-col gap-4 max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-md bg-white rounded-[13px] p-5 flex flex-col gap-4 max-h-[90vh] overflow-y-auto shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
