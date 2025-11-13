@@ -13,55 +13,55 @@ const Navbar = () => {
 
   return (
     <header className="w-full bg-white border-b border-gray-100 relative z-50">
-      <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between h-16 sm:h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src="/logo.png"
               alt="Logo"
-              className="h-9 sm:h-11 w-auto object-contain"
+              className="h-8 sm:h-9 w-auto object-contain"
             />
           </Link>
 
           {/* Desktop Menu and Login (Right Side) */}
-          <div className="hidden md:flex items-center gap-1 lg:gap-2">
-            <nav className="flex items-center gap-1 lg:gap-2">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <nav className="flex items-center gap-6 lg:gap-8">
               <Link
                 to="/"
-                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] font-medium text-[#3CC27B] hover:text-[#3CC27B]/80 transition"
+                className="text-[13px] font-medium text-[#3CC27B] hover:text-[#3CC27B]/80 transition whitespace-nowrap"
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+                className="text-[13px] text-gray-700 hover:text-[#3CC27B] transition whitespace-nowrap"
               >
                 About
               </Link>
               <Link
                 to="/services"
-                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+                className="text-[13px] text-gray-700 hover:text-[#3CC27B] transition whitespace-nowrap"
               >
                 Services
               </Link>
               <Link
                 to="/contact"
-                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+                className="text-[13px] text-gray-700 hover:text-[#3CC27B] transition whitespace-nowrap"
               >
                 Contact
               </Link>
               <a
                 href="#"
-                className="px-3 lg:px-4 py-2 text-sm lg:text-[15px] text-gray-700 hover:text-[#3CC27B] transition"
+                className="text-[13px] text-gray-700 hover:text-[#3CC27B] transition whitespace-nowrap"
               >
                 FAQ
               </a>
             </nav>
 
             {/* Login Button */}
-            <Link to="/login" className="ml-2 lg:ml-4">
-              <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-6 lg:px-8 h-[36px] sm:h-[40px] text-sm rounded-md transition">
+            <Link to="/login" className="flex-shrink-0">
+              <Button className="bg-[#161616] hover:bg-[#161616]/90 text-white px-6 h-9 text-[13px] rounded-md transition">
                 Login
               </Button>
             </Link>
