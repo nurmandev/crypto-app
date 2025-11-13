@@ -72,7 +72,7 @@ export default function TransactionDetailsModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md bg-white rounded-[13px] p-5 flex flex-col gap-4 max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-md bg-white rounded-[13px] p-5 flex flex-col gap-4 max-h-[90vh] overflow-y-auto shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
